@@ -3,7 +3,7 @@
 # freeCodeCamp Guides
 The freeCodeCamp community is building a massive, searchable "Guide." This reference tool will eventually include thousands of articles that cover all areas of development, design, and data science - all written to be easily understood by people new to coding.
 
-This repo is where we plan and maintain these guide articles, which we then host on our community's wiki-like [guides website](guide.netlify.com).
+This repo is where we plan and maintain these guide articles, which we then host on our community's wiki-like [guides website](http://guide.netlify.com).
 
 **Table of Contents**
 
@@ -18,7 +18,7 @@ Guide articles can be an explanation of a syntax, design pattern, what aria labe
 ## What can I write an article about?
 We welcome your help writing these articles. You don't have to be an expert in a topic to write about it - this entire guide is open source, so even if you make a mistake, another contributor will eventually correct it.
 
-To help, find a `stub article` on our [guides website](guide.netlify.com), write the article, then open a pull request (PR) to replace the stub with your article.
+To help, find a `stub article` on our [guides website](http://guide.netlify.com/), write the article, then open a pull request (PR) to replace the stub with your article.
 
 If you can't find a stub about the topic you'd like to write about, you can open a PR that creates the stub and includes your draft article. Feel free to ask us questions if you're not sure where to put a new article in the directory structure.
 
@@ -39,27 +39,33 @@ You can create a PR with your draft article (or edits on an existing article) in
 
 2) If you prefer to write locally before submitting a PR, then follow these steps:
 - Fork this repository
-- Copy it to your local machine by running the command `git clone https://github.com/<your-username>/guides.git`
+- Copy it to your local machine by running the command `git clone https://github.com/<YOUR GITHUB USERNAME>/guides.git`
 - Add a remote upstream so git knows where the official freeCodeCamp guides repository is located by running the command `git remote add upstream https://github.com/freeCodeCamp/guides.git`
 - Create a new branch for your work with the command `git checkout -b <new-branch-name>`. Try to name your branch in a way that describes your article topic, like `fix/ArticleHTMLElements`
-- Write your article, run `npm run meta`, commit your changes locally, and push your new branch to GitHub with the command `git push origin <new-branch-name>`
+- Write your article, commit your changes locally, and push your new branch to GitHub with the command `git push origin <new-branch-name>`
 - Go to your repository on GitHub and open a PR
 
 Make sure to maintain your local fork going forward so it stays up-to-date with the freeCodeCamp guides repository. The next time you want to contribute, checkout your local `master` branch and run the command `git pull --rebase upstream master` before creating a new branch. This will grab all the changes on the official `master` branch without making an additional commit in your local repository.
 
-We're happy to help answer any questions you may have and give you feedback on your articles in the [contributors chat room](https://gitter.im/freecodecamp/contributors).
+## Running the guide locally on your own computer
 
-Finally, if you want to run a version of the Guide repository locally, follow these commands:
+Finally, if you want to run a version of the Guide repository locally, follow these steps:
 
+1. Ensure you have the `yarn` package manager installed `npm install -g yarn`
+2. Fork this repository
+3. :point_down:
 ```sh
-git clone https://github.com/freeCodeCamp/guides.git
+git clone https://github.com/<YOUR GITHUB USERNAME>/guides.git
 cd guides
-npm i
-npm run dev
+yarn install
+yarn run dev
 ```
+
+In this project we are using `yarn` because `netlify` builds our site with `yarn`.
+
 ## Article style guide
 
-We've written this guide to writing guide articles to help you get started contributing.
+We've written the following guide to writing guide articles to help you get started contributing.
 
 **Table of Contents**
 
@@ -67,8 +73,10 @@ We've written this guide to writing guide articles to help you get started contr
 - [Modularity](#modularity)
 - [General writing tips](#general-writing-tips)
 - [Formatting example code](#formatting-example-code)
+- [Adding images to articles](#adding-images-to-articles)
 - [Proper nouns](#proper-nouns)
 - [Where to get help](#where-to-get-help)
+
 
 ### Article title
 
@@ -131,6 +139,16 @@ Here are specific formatting guidelines for any code:
 - Comments made should have a space between the comment characters and the comment themselves
 
     `// Fix this line`
+
+### Adding images to articles
+
+For including images, if the images aren't already hosted somewhere else on the web, you'll need to put them online yourself. A good way to do this is to commit them to a GitHub repository of your own, then push them to GitHub. Then you can right click the image and copy its image source.
+
+Then you'd just need to reference them in your markdown file with this syntax:
+
+`![your alt text](your url)`
+
+Then the images should show up when you click the "preview table" tab.
 
 ### Proper nouns
 
